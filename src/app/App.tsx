@@ -7,17 +7,21 @@ import { LoginForm } from '../features';
 import { useStore } from './providers/StoreProvider';
 
 const App: FC = () => {
-  const { store } = useStore()
+  const { store } = useStore();
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      store.checkAuth()
+      store.checkAuth();
     }
-  }, [store])
+  }, [store]);
 
   return (
     <>
-      <h1>{store.isAuth ? `User is authorized ${store.user.email}` : `User is not authorized`}</h1>
+      <h1>
+        {store.isAuth
+          ? `User is authorized ${store.user.email}`
+          : `User is not authorized`}
+      </h1>
       <LoginForm />
     </>
   );

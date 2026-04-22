@@ -16,9 +16,7 @@ export const StoreContext = createContext<StoreContextValue>({ store });
 
 export const StoreProvider = ({ children }: StoreProviderProps) => {
   return (
-    <StoreContext.Provider value={{ store }}>
-      {children}
-    </StoreContext.Provider>
+    <StoreContext.Provider value={{ store }}>{children}</StoreContext.Provider>
   );
 };
 

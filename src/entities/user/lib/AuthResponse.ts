@@ -1,4 +1,4 @@
-import type { IUser } from "../../../entities/user";
+import type { IUser } from '..';
 
 export interface AuthResponse {
   accessToken: string;
