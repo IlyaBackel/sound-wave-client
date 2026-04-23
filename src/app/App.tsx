@@ -3,8 +3,10 @@ import { useEffect, type FC } from 'react';
 import './styles/index.css';
 
 import { observer } from 'mobx-react-lite';
-import { LoginForm } from '../features';
+
 import { useStore } from './providers/StoreProvider';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routing/routes';
 
 const App: FC = () => {
   const { store } = useStore();
@@ -16,14 +18,15 @@ const App: FC = () => {
   }, [store]);
 
   return (
-    <>
-      <h1>
-        {store.isAuth
-          ? `User is authorized ${store.user.email}`
-          : `User is not authorized`}
-      </h1>
-      <LoginForm />
-    </>
+    <RouterProvider router={router} />
+    // <>
+    //   <h1>
+    //     {store.isAuth
+    //       ? `User is authorized ${store.user.email}`
+    //       : `User is not authorized`}
+    //   </h1>
+    //   <LoginForm />
+    // </>
   );
 };
 

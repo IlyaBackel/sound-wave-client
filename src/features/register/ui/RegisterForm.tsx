@@ -17,7 +17,7 @@ interface RegistrationData {
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
-const RegistrationForm: FC = () => {
+const RegisterForm: FC = () => {
   const { store } = useStore();
   const {
     register,
@@ -62,4 +62,4 @@ const RegistrationForm: FC = () => {
   );
 };
 
-export default observer(RegistrationForm);
+export default observer(RegisterForm);
