@@ -18,15 +18,10 @@ const App: FC = () => {
   }, [store]);
 
   return (
-    <RouterProvider router={router} />
-    // <>
-    //   <h1>
-    //     {store.isAuth
-    //       ? `User is authorized ${store.user.email}`
-    //       : `User is not authorized`}
-    //   </h1>
-    //   <LoginForm />
-    // </>
+    <>
+      <RouterProvider router={router} />
+      {store.isAuth ? store.user.email : 'not auth'}  
+    </>
   );
 };
 

@@ -4,7 +4,10 @@ import { useStore } from '../../../app/providers/StoreProvider';
 import { useForm } from 'react-hook-form';
 import z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Input } from '../../../shared/ui/Input';
+import { Input } from '../../components/Input';
+import { Form } from '../../components/Form';
+import { Button } from '../../../shared/ui/Button';
+import { colors } from '../../../shared/config/theme';
 
 const FormSchema = z.object({
   email: z.string().email('Invalid email'),
@@ -40,13 +43,7 @@ const LoginForm: FC = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen w-min-content px-10">
-      <div className="border-2 px-16 py-8 rounded-2xl flex flex-col gap-6">
-        <h1 className="text-center text-4xl font-bold">Login</h1>
-        <form
-          className="flex flex-col gap-4 items-center-safe"
-          onSubmit={handleSubmit(submitForm)}
-        >
+        <Form label='Sign In' onSubmitForm={handleSubmit(submitForm)}>
           <Input
             labelText="Email"
             name="Email"
@@ -63,15 +60,8 @@ const LoginForm: FC = () => {
             register={register('password', { required: true })}
             error={errors.password?.message}
           />
-          <button
-            type="submit"
-            className="border-2 rounded-2xl w-min-content py-2 px-4 font-bold text-lg"
-          >
-            Login
-          </button>
-        </form>
-      </div>
-    </div>
+          <Button className={`bg-[${colors.primary}]`} label="Sign In" />
+        </Form>
   );
 };
 

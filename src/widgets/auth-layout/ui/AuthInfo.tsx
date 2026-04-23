@@ -1,7 +1,11 @@
-export const AuthInfo = () => {
+import { colors } from "../../../shared/config/theme";
+import { AuthInfoLogin } from "./AuthInfoLogin";
+import { AuthInfoRegister } from "./AuthInfoRegister";
+
+export const AuthInfo = ({type}: {type: 'login' | 'register'}) => {
   return (
-    <div className="bg-green-500 flex items-center justify-center w-50 h-50">
-      <h1>AuthInfo</h1>
+    <div className={`bg-[${colors.primary}] flex items-center justify-center h-full w-[50%]`}>
+      {type === 'login' ? <AuthInfoLogin /> : <AuthInfoRegister />}
     </div>
   );
 };
