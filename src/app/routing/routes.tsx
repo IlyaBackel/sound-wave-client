@@ -1,7 +1,9 @@
 import { createBrowserRouter } from 'react-router';
 
 import { LoginForm, RegisterForm } from '../../features';
-import AuthLayout from '../../widgets/auth-layout';
+import AuthLayout from '../layouts/auth-layout';
+import MainLayout from '../layouts/main-layout';
+import TrendingPage from '../../pages/trending-page';
 
 export const router = createBrowserRouter([
   {
@@ -18,4 +20,14 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+     path: '/',
+    element: <MainLayout />,
+    children: [
+      {
+        path: '/trending',
+        element: <TrendingPage />
+      }
+    ]
+  }
 ]);

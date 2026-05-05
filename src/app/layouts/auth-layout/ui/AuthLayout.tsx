@@ -17,7 +17,7 @@ const AuthLayout = () => {
             <div className='flex items-center justify-center w-screen'>
                 <AnimatePresence mode="wait">
                     <motion.div
-                        key={location.pathname} // перерендер при смене пути
+                        key={location.pathname}
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"

@@ -1,5 +1,5 @@
 import type { AxiosResponse } from 'axios';
-import type { AuthResponse } from '../lib/AuthResponse';
+import type { AuthResponse } from './types';
 import api from '../../../shared/api/axiosInstance';
 
 export default class AuthService {
@@ -19,5 +19,9 @@ export default class AuthService {
 
   static async logout(): Promise<void> {
     return api.post('/logout');
+  }
+
+  static async refresh() {
+    return api.get<AuthResponse>(`/refresh`, { withCredentials: true });
   }
 }

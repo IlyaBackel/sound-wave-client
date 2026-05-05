@@ -1,13 +1,14 @@
-import { type FC } from 'react';
-import { observer } from 'mobx-react-lite';
-import { useStore } from '../../../app/providers/StoreProvider';
+// features/register/ui/RegisterForm.tsx
+import { type FC, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import { useNavigate } from 'react-router-dom';
 import { Input } from '../../components/Input';
 import { Form } from '../../components/Form';
 import { Button } from '../../../shared/ui/Button';
-import { colors } from '../../../shared/config/theme';
+import { useAppDispatch, useAppSelector } from '../../../app/store/hooks';
+import { registration } from '../../../entities/user';
 
 const FormSchema = z.object({
   email: z.string().email('Invalid email'),
@@ -19,9 +20,11 @@ interface RegistrationData {
   password: string;
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
-const RegisterForm: FC = () => {
-  const { store } = useStore();
+export const RegisterForm: FC = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const { isAuth, error } = useAppSelector((state) => state.userReducer);
+
   const {
     register,
     handleSubmit,
@@ -36,9 +39,15 @@ const RegisterForm: FC = () => {
   });
 
   const submitForm = (data: RegistrationData) => {
-    store.login(data.email, data.password);
+    dispatch(registration({ email: data.email, password: data.password }));
     reset();
   };
+
+  useEffect(() => {
+    if (isAuth) {
+      navigate('/');
+    }
+  }, [isAuth, navigate]);
 
   return (
     <Form label="Sign Up" onSubmitForm={handleSubmit(submitForm)}>
@@ -58,9 +67,8 @@ const RegisterForm: FC = () => {
         register={register('password', { required: true })}
         error={errors.password?.message}
       />
-      <Button className={`bg-[${colors.primary}]`} label="Sign Up" />
+      {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
+      <Button className="bg-primary" label="Sign Up" />
     </Form>
   );
 };
-
-export default observer(RegisterForm);

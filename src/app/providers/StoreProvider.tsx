@@ -1,29 +1,10 @@
-/* eslint-disable react-refresh/only-export-components */
-import { createContext, type ReactNode, useContext } from 'react';
-import Store from '../../entities/user/model/store';
+import { Provider } from 'react-redux';
+import { setupStore } from '../store/store';
+import type { ReactNode } from 'react';
 
-interface StoreProviderProps {
-  children: ReactNode;
-}
 
-interface StoreContextValue {
-  store: Store;
-}
+const store = setupStore();
 
-const store = new Store();
-
-export const StoreContext = createContext<StoreContextValue>({ store });
-
-export const StoreProvider = ({ children }: StoreProviderProps) => {
-  return (
-    <StoreContext.Provider value={{ store }}>{children}</StoreContext.Provider>
-  );
-};
-
-export const useStore = () => {
-  const context = useContext(StoreContext);
-  if (!context) {
-    throw new Error('useStore must be used within StoreProvider');
-  }
-  return context;
+export const StoreProvider = ({ children }: { children: ReactNode }) => {
+  return <Provider store={store}>{children}</Provider>;
 };
