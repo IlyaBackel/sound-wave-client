@@ -1,9 +1,10 @@
-import { createBrowserRouter } from 'react-router';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 import { LoginForm, RegisterForm } from '../../features';
 import AuthLayout from '../layouts/auth-layout';
 import MainLayout from '../layouts/main-layout';
 import TrendingPage from '../../pages/trending-page';
+import HomePage from '../../pages/home-page';
 
 export const router = createBrowserRouter([
   {
@@ -21,13 +22,21 @@ export const router = createBrowserRouter([
     ],
   },
   {
-     path: '/',
+    path: '/',
     element: <MainLayout />,
     children: [
       {
-        path: '/trending',
+        index: true,
+        element: <Navigate to="/home" replace />
+      },
+      {
+        path: 'home',
+        element: <HomePage />
+      },
+      {
+        path: 'trending',
         element: <TrendingPage />
-      }
+      },
     ]
   }
 ]);

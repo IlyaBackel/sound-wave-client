@@ -1,23 +1,25 @@
-import { useQuery } from '@tanstack/react-query';
-// import { useStore } from '../../../app/providers/StoreProvider';
-import api from '../../../shared/api/axiosInstance';
-
-async function getTrendingTracks() {
-  return await api.get('/trending?limit=2').then((res) => res.data.data);
-}
+import { useTrendingTracks } from '../api/trendingApi';
+import Track from '../../../entities/track';
+import { ContentTabs } from '../../../features';
 
 const TrendingPage = () => {
-  // const { store } = useStore();
-  const { data: trendingTracks } = useQuery({
-    queryKey: ['trending-tracks'],
-    queryFn: getTrendingTracks,
-  })
-  console.log(trendingTracks);  
+  const { data: trendingTracks } = useTrendingTracks();
 
   return (
-    <div className='flex flex-col items-center justify-center h-full w-full'>
-      {/* <p className='text-2xl font-bold'>{store.isAuth ? store.user.email : 'not auth'}</p> */}
-      <div>{trendingTracks?.map((track) => <div key={track.track_id}>{track.title}</div>)}</div>
+    <div className='flex flex-col justify-center w-full px-10 mb-24 py-2'>
+      <ContentTabs />
+      <h1 className="text-2xl font-bold">Trending</h1>
+      {trendingTracks?.map((track) => (
+        <Track
+          key={track.id}
+          id={track.id}
+          title={track.title}
+          artist={track.user.name}
+          duration={track.duration}
+          picture={track.artwork['150x150']}
+          streamUrl={track.stream.url}
+        />
+      ))}
     </div>
   );
 };

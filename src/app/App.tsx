@@ -1,4 +1,3 @@
-// src/app/App.tsx
 import { useEffect, type FC } from 'react';
 import './styles/index.css';
 import { RouterProvider } from 'react-router-dom';

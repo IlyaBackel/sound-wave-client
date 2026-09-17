@@ -15,7 +15,7 @@ export const Form: FC<IFormProps> = ({ label, children, onSubmitForm }) => {
             className="flex h-full w-[50%]"
         >
 
-                <div className="px-6 py-10 flex flex-col gap-6 w-full h-full items-center justify-center">
+                <div className="px-6 py-10 flex flex-col gap-6 w-full h-full items-center justify-center bg-secondary">
                     <h1 className="text-center text-4xl font-bold">{label}</h1>
                     <form
                         className="flex flex-col gap-4 items-center-safe"

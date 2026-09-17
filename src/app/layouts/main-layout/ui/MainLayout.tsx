@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import { Group, Panel, Separator } from 'react-resizable-panels';
 import { Outlet } from 'react-router';
-import { Header } from './Header';
 import Player from '../../../../widgets/player';
 import Playlists from '../../../../widgets/playlists';
 import TrackInformation from '../../../../widgets/track-information/ui/TrackInformation';
+import Header from '../../../../widgets/header';
 
 const MainLayout = () => {
     const leftPanelRef = useRef(null);

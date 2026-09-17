@@ -4,8 +4,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useNavigate } from 'react-router-dom';
-import { Input } from '../../components/Input';
-import { Form } from '../../components/Form';
+import { Input } from '../../../shared/ui/Input';
+import { Form } from '../../../shared/ui/Form';
 import { Button } from '../../../shared/ui/Button';
 import { useAppDispatch, useAppSelector } from '../../../app/store/hooks';
 import { registration } from '../../../entities/user';
@@ -23,7 +23,7 @@ interface RegistrationData {
 export const RegisterForm: FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { isAuth, error } = useAppSelector((state) => state.userReducer);
+  const { isAuth } = useAppSelector((state) => state.userReducer);
 
   const {
     register,
@@ -67,8 +67,7 @@ export const RegisterForm: FC = () => {
         register={register('password', { required: true })}
         error={errors.password?.message}
       />
-      {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
-      <Button className="bg-primary" label="Sign Up" />
+      <Button className="bg-primary text-secondary" label="Sign Up" />
     </Form>
   );
 };

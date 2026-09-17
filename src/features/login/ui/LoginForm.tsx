@@ -1,11 +1,10 @@
-// features/login/ui/LoginForm.tsx
 import { type FC, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useNavigate } from 'react-router-dom';
-import { Input } from '../../components/Input';
-import { Form } from '../../components/Form';
+import { Input } from '../../../shared/ui/Input';
+import { Form } from '../../../shared/ui/Form';
 import { Button } from '../../../shared/ui/Button';
 import { useAppDispatch, useAppSelector } from '../../../app/store/hooks';
 import { login } from '../../../entities/user';
@@ -23,7 +22,7 @@ interface LoginData {
 export const LoginForm: FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { isAuth, error } = useAppSelector((state) => state.userReducer);
+  const { isAuth } = useAppSelector((state) => state.userReducer);
 
   const {
     register,
@@ -64,7 +63,6 @@ export const LoginForm: FC = () => {
         register={register('password', { required: true })}
         error={errors.password?.message}
       />
-      {error && <div className="text-red-500 text-sm">{error}</div>}
       <Button className="bg-primary" label="Sign In" />
     </Form>
   );
