@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { DEFAULT_THEME, isThemeMode, isThemeName, type ThemeMode, type ThemeName } from '../../shared/config/theme';
+import { DEFAULT_THEME, isThemeMode, isThemeName, type ThemeMode, type ThemeName } from '../../shared/config/themes/theme';
 
 interface ThemeContextType {
     theme: ThemeName;
@@ -35,7 +35,7 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
         root.setAttribute('data-mode', mode);
         root.style.colorScheme = mode;
         localStorage.setItem('appearance', JSON.stringify({ theme, mode }));
-    }, [mode]);
+    }, [mode, theme]);
 
     const toggleMode = () => {
         setMode(prev => (prev === 'light' ? 'dark' : 'light'));

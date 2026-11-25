@@ -1,0 +1,22 @@
+[data-mode="dark"] {
+  color-scheme: dark;
+  
+  --color-primary-bg: #2c2c34;
+  --color-primary-text: #d8e2f2;
+  --color-secondary-text: #b8bcc1;
+  --color-placeholder: #6b7280;
+  --color-border-primary: #778db0;
+  --color-card-bg: #383843;
+  --color-card-hover-bg: #474755;
+  --color-btn-hover: #5f646f;
+
+  --color-toggle-track: #374151;
+  --color-toggle-thumb: #1f2937;
+  --color-toggle-sun: #fde047;
+  --color-toggle-moon: #fde047;
+
+  --color-google-bg: #374151;
+  --color-google-text: #f9fafb;
+  --color-google-border: #767575;
+  --color-google-hover-bg: #7e7ae9;
+}

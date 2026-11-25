@@ -1,0 +1,29 @@
+[data-theme="frozen-lagoon"] {
+  --color-primary: #1b4965;            
+  --color-primary-hover: #143850;      
+  --color-on-primary: #ffffff;
+
+  --color-primary-bg: #cae9ff;         
+  --color-primary-text: #1b4965;       
+  --color-secondary-text: #3a6b87;     
+  --color-placeholder: #5fa8d3;        
+  --color-border-primary: #5fa8d3;     
+  --color-card-bg: #ddf2ff;            
+  --color-card-hover-bg: #bee9e8;      
+  --color-btn-hover: #a8dcf7;
+}
+
+[data-theme="frozen-lagoon"][data-mode="dark"] {
+  --color-primary: #62b6cb;            
+  --color-primary-hover: #5fa8d3;      
+  --color-on-primary: #0a1f2e;         
+
+  --color-primary-bg: #1b4965;         
+  --color-primary-text: #bee9e8;       
+  --color-secondary-text: #62b6cb;     
+  --color-placeholder: #3a6b87;        
+  --color-border-primary: #2a5f7f;     
+  --color-card-bg: #143850;            
+  --color-card-hover-bg: #1e5570;      
+  --color-btn-hover: #24648a;
+}

@@ -1,14 +1,14 @@
 import { useTheme } from "../../../app/providers/ThemeProvider";
 
 export default function ThemeSwitcher() {
-  const { theme, toggleTheme } = useTheme();
-  const isDark = theme === 'dark';
+  const { mode, toggleMode } = useTheme();
+  const isDark = mode === 'dark';
 
   return (
     <div
       role="switch"
       aria-checked={isDark}
-      onClick={toggleTheme}
+      onClick={toggleMode}
       className="relative w-14 h-7 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 select-none shadow-inner"
       style={{ backgroundColor: 'var(--toggle-track-bg)' }}
     >

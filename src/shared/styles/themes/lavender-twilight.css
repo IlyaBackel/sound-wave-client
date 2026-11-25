@@ -1,0 +1,29 @@
+[data-theme="lavender-twilight"] {
+  --color-primary: #a06cd5;            
+  --color-primary-hover: #6247aa;     
+  --color-on-primary: #ffffff;
+
+  --color-primary-bg: #e2cfea;         
+  --color-primary-text: #102b3f;      
+  --color-secondary-text: #6247aa;     
+  --color-placeholder: #a06cd5;        
+  --color-border-primary: #6247aa;
+  --color-card-bg: #ede1f3;            
+  --color-card-hover-bg: #dcc4e6;      
+  --color-btn-hover: #d4bfdc;
+}
+
+[data-theme="lavender-twilight"][data-mode="dark"] {
+  --color-primary: #b98ee8;             
+  --color-primary-hover: #a06cd5;       
+  --color-on-primary: #102b3f;          
+
+  --color-primary-bg: #102b3f;          
+  --color-primary-text: #e2cfea;        
+  --color-secondary-text: #a06cd5;      
+  --color-placeholder: #7c95a8;         
+  --color-border-primary: #6247aa;      
+  --color-card-bg: #062726;             
+  --color-card-hover-bg: #0a3a38;       
+  --color-btn-hover: #1a4055;           
+}
