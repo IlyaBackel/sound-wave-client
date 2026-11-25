@@ -12,7 +12,7 @@ const Player = () => {
     const setVolume = usePlayerStore((state) => state.setVolume);
 
     return (
-        <div className="w-full flex items-center justify-center h-20 bg-[#ff9e9e]">
+        <div className="w-full flex items-center justify-center h-20 bg-main-bg">
             <p>{currentTrack?.title}</p>
             <button onClick={() => currentTrack ? pause() : play(track)}>
                 {isPlaying ? '⏸' : '▶'}

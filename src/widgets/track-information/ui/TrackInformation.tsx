@@ -5,7 +5,7 @@ interface TrackInformationProps {
 
 const TrackInformation = ({ onExpand }: TrackInformationProps) => {
   return (
-    <div className="relative h-full bg-[#f57878]">
+    <div className="relative h-full bg-primary-bg rounded-l-2xl  overflow-hidden">
       <div className="p-4">
         <h2>Информация о треке</h2>
         <p>Название: ...</p>

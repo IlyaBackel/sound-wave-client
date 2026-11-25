@@ -13,7 +13,7 @@ const AuthLayout = () => {
     };
 
     return (
-        <div className='h-screen w-screen flex justify-center items-center'>
+        <div className='h-screen w-screen flex justify-center items-center bg-main-bg'>
             <div className='flex items-center justify-center w-screen'>
                 <AnimatePresence mode="wait">
                     <motion.div
@@ -30,7 +30,7 @@ const AuthLayout = () => {
                                     initial={{ x: -20, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ duration: 0.4, delay: 0.1 }}
-                                    className="flex flex-row items-center h-[50vh] justify-center w-[60%] shadow-xl rounded-2xl overflow-hidden"
+                                    className="flex flex-row items-center h-[50vh] justify-center w-[60%] shadow-xl rounded-2xl overflow-hidden bg-primary-bg"
                                 >
 
                                     <Outlet />
@@ -43,7 +43,7 @@ const AuthLayout = () => {
                                     initial={{ x: -20, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ duration: 0.4, delay: 0.1 }}
-                                    className="flex flex-row items-center h-[50vh] justify-center w-[60%] shadow-xl rounded-2xl overflow-hidden"
+                                    className="flex flex-row items-center h-[50vh] justify-center w-[60%] shadow-xl rounded-2xl overflow-hidden bg-primary-bg"
                                 >
                                     <AuthInfo type='login' />
                                     <Outlet />

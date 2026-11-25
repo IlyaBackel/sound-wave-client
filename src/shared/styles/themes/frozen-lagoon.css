@@ -3,7 +3,8 @@
   --color-primary-hover: #143850;      
   --color-on-primary: #ffffff;
 
-  --color-primary-bg: #cae9ff;         
+  --color-primary-bg: #cae9ff;       
+  --color-main-bg: #b8def5;  
   --color-primary-text: #1b4965;       
   --color-secondary-text: #3a6b87;     
   --color-placeholder: #5fa8d3;        
@@ -18,7 +19,8 @@
   --color-primary-hover: #5fa8d3;      
   --color-on-primary: #0a1f2e;         
 
-  --color-primary-bg: #1b4965;         
+  --color-primary-bg: #1b4965;
+  --color-main-bg: #123247;     
   --color-primary-text: #bee9e8;       
   --color-secondary-text: #62b6cb;     
   --color-placeholder: #3a6b87;        

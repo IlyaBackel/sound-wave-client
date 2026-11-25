@@ -6,7 +6,7 @@ const ContentTabs = () => {
   const isHome = location.pathname === '/home';
 
   return (
-    <div className="inline-flex gap-1 bg-gray-600  w-fit rounded-full p-1 mb-6">
+    <div className="inline-flex gap-1 bg-gray-600  w-fit rounded-full p-1 mb-6" >
       <NavLink to="/home" className="relative z-10 px-4 py-2 text-sm font-medium rounded-full">
         <span className={`relative z-10 ${isHome ? 'text-gray-900' : 'text-gray-200'}`}>
           Home

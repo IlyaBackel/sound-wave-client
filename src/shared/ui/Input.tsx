@@ -20,11 +20,11 @@ export const Input: FC<InputProps> = ({
 }) => {
   return (
     <div className="flex flex-col gap-1 w-80 w-min-content">
-      <label className="ml-3" htmlFor={name}>
+      <label className="ml-3 text-primary-text" htmlFor={name}>
         {labelText}
       </label>
       <input
-        className="border-2 border-black w-full rounded-md mb-2 p-1"
+        className="border-2 border-primary w-full rounded-md mb-2 p-1"
         {...register}
         type={type}
         placeholder={`Enter ${name}`}

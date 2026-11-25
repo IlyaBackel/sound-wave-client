@@ -10,11 +10,11 @@ export const AuthInfoLogin = () => {
             transition={{ duration: 0.5, delay: 0.45 }}
             className="flex flex-col gap-10 items-center justify-center h-full w-[70%]"
         >
-                <h1 className="text-4xl font-bold">Welcome Back!</h1>
-                <p className="text-lg font-light w-full text-center">To listen to music with us, please log in using your personal information.</p>
-                <NavLink to={'/auth/register'}>
-                    <Button label="Sign Up" className="bg-white" />
-                </NavLink>
+            <h1 className="text-4xl font-bold text-on-primary">Welcome Back!</h1>
+            <p className="text-xl font-light w-full text-center text-on-primary">To listen to music with us, please log in using your personal information.</p>
+            <NavLink to={'/auth/register'}>
+                <Button label="Sign Up" className="bg-white text-on-reverse" />
+            </NavLink>
         </motion.div>
     );
 };

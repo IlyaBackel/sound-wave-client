@@ -63,7 +63,7 @@ export const LoginForm: FC = () => {
         register={register('password', { required: true })}
         error={errors.password?.message}
       />
-      <Button className="bg-primary" label="Sign In" />
+      <Button className="bg-primary text-primary-text" label="Sign In" />
     </Form>
   );
 };

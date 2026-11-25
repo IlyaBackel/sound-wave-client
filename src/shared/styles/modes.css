@@ -1,7 +1,8 @@
 [data-mode="dark"] {
   color-scheme: dark;
-  
+
   --color-primary-bg: #2c2c34;
+  --color-main-bg: #0a1d2b;
   --color-primary-text: #d8e2f2;
   --color-secondary-text: #b8bcc1;
   --color-placeholder: #6b7280;

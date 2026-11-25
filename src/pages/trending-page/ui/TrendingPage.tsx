@@ -6,7 +6,7 @@ const TrendingPage = () => {
   const { data: trendingTracks } = useTrendingTracks();
 
   return (
-    <div className='flex flex-col justify-center w-full px-10 mb-24 py-2'>
+    <div className='flex flex-col justify-center w-full h-full px-10 mb-24 py-2 bg-primary-bg'>
       <ContentTabs />
       <h1 className="text-2xl font-bold">Trending</h1>
       {trendingTracks?.map((track) => (

@@ -2,7 +2,7 @@ import ThemeSwitcher from "../../../features/theme-switcher/ui/ThemeSwitcher"
 
 export const Header = () => {
     return (
-        <div className="w-full flex flex-row gap-10 justify-around items-center h-15 bg-[#ff9e9e]">
+        <div className="w-full flex flex-row gap-10 justify-around items-center h-15 bg-main-bg">
             <div>Logo</div>
             <ThemeSwitcher />
             <div className="flex gap-5">

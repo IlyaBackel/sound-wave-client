@@ -11,10 +11,10 @@ export const AuthInfoRegister = () => {
             className="flex flex-col gap-10 items-center justify-center h-full w-[70%]"
         >
 
-            <h1 className="text-4xl font-bold">Hello, Friend!</h1>
-            <p className="text-lg font-light w-full text-center">Enter your personal information and start listening to music with us!</p>
+            <h1 className="text-4xl font-bold text-on-primary">Hello, Friend!</h1>
+            <p className="text-lg font-light w-full text-center text-on-primary">Enter your personal information and start listening to music with us!</p>
             <NavLink to={'/auth/login'}>
-                <Button label="Sign In" className="bg-white" />
+                <Button label="Sign In" className="bg-white text-on-reverse" />
             </NavLink>
         </motion.div>
     );

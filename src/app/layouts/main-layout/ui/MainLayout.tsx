@@ -27,13 +27,13 @@ const MainLayout = () => {
                     <Playlists onExpand={expandLeft} />
                 </Panel>
 
-                <Separator className="w-1 bg-gray-300 hover:bg-gray-400 transition-colors" />
+                <Separator className="w-2 bg-main-bg transition-colors" />
 
                 <Panel>
                     <Outlet />
                 </Panel>
 
-                <Separator className="w-1 bg-gray-300 hover:bg-gray-400 transition-colors" />
+                <Separator className="w-2 bg-main-bg transition-colors" />
 
                 <Panel
                     panelRef={rightPanelRef}
