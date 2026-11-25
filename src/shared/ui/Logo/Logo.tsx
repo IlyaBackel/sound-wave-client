@@ -8,6 +8,7 @@ interface LogoProps extends SVGProps<SVGSVGElement> {
 }
 
 export const Logo: FC<LogoProps> = ({ size = 40, theme }) => {
+    //   const { theme } = useTheme();
     const isDark = theme === 'dark' ? true : false;
 
     return (
